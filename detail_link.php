@@ -8,7 +8,7 @@
             $strP_id = $_GET["P_id"];
         }
         require "connect.php";
-        $sql ="SELECT * FROM patient WHERE P_id = ?";
+        $sql ="SELECT * FROM patient,permissions WHERE P_id = ?";
         $params = array($strP_id);
         $stmt = $conn->prepare($sql);
         $stmt->execute($params);
